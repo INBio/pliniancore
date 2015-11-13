@@ -1,0 +1,81 @@
+<dataConfig>
+    <dataSource jndiName="java:comp/env/jdbc/neoportal" type="JdbcDataSource" />
+    <document>
+        <entity name="pliniancore" 
+            query="SELECT taxon_record_id, taxon_id, version, scientific_name, scientific_name_authorship,
+            concat(regional_distribution, cr_distribution, wild_protected_area_distribution, conservationareadistribution) as distributionUnstructured,
+            name_published_in_year, individual_name, to_timestamp(date_issued, 'MM/DD/YYYY') as date_issued, common_names_unstructured, 
+            synonyms, type_locality, type_depository, full_description_unstructured, 
+            molecular_data_unstructure, 
+            annual_cycles_unstructure, uses_unstructure, 
+            life_cycle_unstructure, interaction_unstructured, life_form_unstructure, 
+            reproduction_unstructure, population_biology_unstructure, 
+            concat(demography_unstructure, threat_unstructure) as demographyAndThreatUnstructured,
+            &quot;references&quot;, published, family, genus, &quot;order&quot;, publishedin,
+            habitat_unstructure, territory_unstructure, feeding_unstructure,
+            behavior_unstructure, to_timestamp(creationdate,'MM/DD/YYYY') as creationdate, threat_status,
+            language,
+            urlfigure1, urldescriptionfigure, 
+            urldistributionmap, urlfigure2, urlfigure3, captiondescriptionfigure, 
+            colaborator1, colaborator2, captionfigure1,
+            captionfigure2, captionfigure3,
+            typecollector, 
+            captiondistributionmap, 
+            coauthor1, coauthor2, emailauthor,  
+            urlthumbnail,  modificationdate, createdby, lastmodificationby, 
+            recordurl, urllogo1, urllogo2, speciesrecordstatus, 
+            philologist, subfamily,  es_meta_descriptors, en_meta_descriptors, 
+            species, cites_threat_status, uicn_threat_status, 
+            etymology, urlvideo,
+            brief_description, legislation_unstructured, 
+            management_and_conservation_unstructured
+            FROM taxon_plic"
+            >
+            <field column="taxon_record_id" name="taxonRecordId" />
+            <field column="taxon_id" name="taxonConceptId" />
+            <field column="version" name="major" />
+            <field column="published" name="modifier" />
+            <field column="date_issued" name="dateIssued" />
+            <field column="creationdate" name="created" />
+            <field column="scientific_name" name="scientificNameSimple" />
+            <field column="scientific_name_authorship" name="canonicalAuthorshipSimple" />
+            <field column="name_published_in_year" name="scientificNameYear" />
+            <field column="publishedin" name="publishedIn" />
+            <field column="individual_name" name="creator" />
+            <field column="common_names_unstructured" name="commonNamesUnstructured" />
+            <field column="synonyms" name="synonymsUnstructured" />
+            <field column="full_description_unstructured" name="fullDescriptionUnstructured" />
+            <field column="molecular_data_unstructure" name="molecularDataUnstructured" />
+            <field column="distributionUnstructured" name="distributionUnstructured" />
+            <field column="annual_cycles_unstructure" name="annualCyclesUnstructured" />
+            <field column="uses_unstructure" name="usesUnstructured" />
+            <field column="life_cycle_unstructure" name="lifeCycleUnstructured" />
+            <field column="interaction_unstructured" name="interactionUnstructured" />
+            <field column="life_form_unstructure" name="lifeFormUnstructured" />
+            <field column="reproduction_unstructure" name="reproductionUnstructured" />
+            <field column="population_biology_unstructure" name="populationBiologyUnstructured" />
+            <field column="demographyAndThreatUnstructured" name="demographyAndThreatUnstructured" />
+            <field column="references" name="references" />
+            <field column="habitat_unstructure" name="habitatUnstructured" />
+            <field column="territory_unstructure" name="territoryUnstructured" />
+            <field column="feeding_unstructure" name="feedingUnstructured" />
+            <field column="family" name="family" />
+            <field column="genus" name="genus" />
+            <field column="order" name="order" />
+            <field column="behavior_unstructure" name="behaviorUnstructured" />
+            <field column="threat_status" name="threatStatusUnstructured" />
+
+            <field column="brief_description" name="briefDescription" />
+            <field column="legislation_unstructured" name="legislationUnstructured" />
+            <field column="management_and_conservation_unstructured" name="managementAndConservationUnstructured" />
+
+            <!-- non plinian - inbio only - fix this -->
+            
+            <field column="type_locality" name="typeLocality" />
+            <field column="type_depository" name="typeDepository" />
+            <field column="typecollector" name="typeCollector" />
+
+        </entity>
+    </document>
+</dataConfig>
+
